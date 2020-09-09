@@ -33,6 +33,7 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
+#define IS_RED_ALERT
 /**********************************************************************
 **	Language control: define the desired language for this build.
 */

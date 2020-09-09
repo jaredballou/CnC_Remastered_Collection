@@ -42,6 +42,10 @@
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include	"function.h"
+//#include <vector>
+//#include <string>
+//#include <iostream>
+//using namespace std;
 
 
 /***************************************************************************
@@ -330,4 +334,79 @@ bool WeaponTypeClass::Is_Wall_Destroyer(void) const
 		return(true);
 	}
 	return(false);
+}
+
+
+/***********************************************************************************************
+ * WeaponTypeClass::Init_Heap -- Initialize the Weapon heap.                                   *
+ *                                                                                             *
+ *    This will pre-allocate all the Weapon types required.                                    *
+ *                                                                                             *
+ * INPUT:   none                                                                               *
+ *                                                                                             *
+ * OUTPUT:  none                                                                               *
+ *                                                                                             *
+ * WARNINGS:   Only call this routine once and do so before processing the rules.ini file.     *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
+ *   07/09/1996 JLB : Created.                                                                 *
+ *=============================================================================================*/
+void WeaponTypeClass::Init_Heap(void)
+{
+	/*
+	**	These Weapon type class objects must be allocated in the exact order that they
+	**	are specified in the WeaponType enumeration. This is necessary because the heap
+	**	allocation block index serves double duty as the type number index.
+	*/
+	new WeaponTypeClass("Colt45");
+	new WeaponTypeClass("ZSU-23");
+	new WeaponTypeClass("Vulcan");
+	new WeaponTypeClass("Maverick");
+	new WeaponTypeClass("Camera");
+	new WeaponTypeClass("FireballLauncher");
+	new WeaponTypeClass("Sniper");
+	new WeaponTypeClass("ChainGun");
+	new WeaponTypeClass("Pistol");
+	new WeaponTypeClass("M1Carbine");
+	new WeaponTypeClass("Dragon");
+	new WeaponTypeClass("Hellfire");
+	new WeaponTypeClass("Grenade");
+	new WeaponTypeClass("75mm");
+	new WeaponTypeClass("90mm");
+	new WeaponTypeClass("105mm");
+	new WeaponTypeClass("120mm");
+	new WeaponTypeClass("TurretGun");
+	new WeaponTypeClass("MammothTusk");
+	new WeaponTypeClass("155mm");
+	new WeaponTypeClass("M60mg");
+	new WeaponTypeClass("Napalm");
+	new WeaponTypeClass("TeslaZap");
+	new WeaponTypeClass("Nike");
+	new WeaponTypeClass("8Inch");
+	new WeaponTypeClass("Stinger");
+	new WeaponTypeClass("TorpTube");
+	new WeaponTypeClass("2Inch");
+	new WeaponTypeClass("DepthCharge");
+	new WeaponTypeClass("ParaBomb");
+	new WeaponTypeClass("DogJaw");
+	new WeaponTypeClass("Heal");
+	new WeaponTypeClass("SCUD");
+	new WeaponTypeClass("Flamer");
+	new WeaponTypeClass("RedEye");
+
+#ifdef FIXIT_ANTS
+	new WeaponTypeClass("Mandible");
+#endif
+
+#ifdef FIXIT_CSII	//	checked - ajw 9/28/98
+	new WeaponTypeClass("PortaTesla");
+	new WeaponTypeClass("GoodWrench");
+	new WeaponTypeClass("SubSCUD");
+	new WeaponTypeClass("TTankZap");
+	new WeaponTypeClass("APTusk");
+	new WeaponTypeClass("Democharge");
+#endif
+#ifdef FIXIT_CARRIER	//	checked - ajw 9/28/98
+	new WeaponTypeClass("AirAssault");
+#endif
 }

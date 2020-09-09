@@ -187,3 +187,31 @@ bool WarheadTypeClass::Read_INI(CCINIClass & ini)
 	return(false);
 }
 
+/***********************************************************************************************
+ * WarheadTypeClass::Init_Heap -- Initialize the Warhead heap.                                   *
+ *                                                                                             *
+ *    This will pre-allocate all the Warhead types required.                                    *
+ *                                                                                             *
+ * INPUT:   none                                                                               *
+ *                                                                                             *
+ * OUTPUT:  none                                                                               *
+ *                                                                                             *
+ * WARNINGS:   Only call this routine once and do so before processing the rules.ini file.     *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
+ *   07/09/1996 JLB : Created.                                                                 *
+ *=============================================================================================*/
+void WarheadTypeClass::Init_Heap(void)
+{
+	new WarheadTypeClass("SA");
+	new WarheadTypeClass("HE");
+	new WarheadTypeClass("AP");
+	new WarheadTypeClass("Fire");
+	new WarheadTypeClass("HollowPoint");
+	new WarheadTypeClass("Super");
+	new WarheadTypeClass("Organic");
+	new WarheadTypeClass("Nuke");
+#ifdef FIXIT_CSII	//	checked - ajw 9/28/98
+	new WarheadTypeClass("Mechanical");
+#endif
+}

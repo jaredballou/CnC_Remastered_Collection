@@ -382,7 +382,7 @@ void AircraftTypeClass::Init_Heap(void)
 AircraftType AircraftTypeClass::From_Name(char const * name)
 {
 	if (name != NULL) {
-		for (int classid = AIRCRAFT_FIRST; classid < AIRCRAFT_COUNT; classid++) {
+		for (int classid = AIRCRAFT_FIRST; classid < AircraftTypes.Count(); classid++) {
 			if (stricmp(As_Reference((AircraftType)classid).IniName, name) == 0) {
 				return(AircraftType)classid;
 			}
@@ -409,7 +409,7 @@ AircraftType AircraftTypeClass::From_Name(char const * name)
  *=============================================================================================*/
 void AircraftTypeClass::One_Time(void)
 {
-	for (int index = AIRCRAFT_FIRST; index < AIRCRAFT_COUNT; index++) {
+	for (int index = AIRCRAFT_FIRST; index < AircraftTypes.Count(); index++) {
 		char fullname[_MAX_FNAME+_MAX_EXT];
 		AircraftTypeClass	const & uclass = As_Reference((AircraftType)index);
 
@@ -473,7 +473,7 @@ ObjectClass * AircraftTypeClass::Create_One_Of(HouseClass * house) const
  *=============================================================================================*/
 void AircraftTypeClass::Prep_For_Add(void)
 {
-	for (AircraftType index = AIRCRAFT_FIRST; index < AIRCRAFT_COUNT; index++) {
+	for (AircraftType index = AIRCRAFT_FIRST; index < AircraftTypes.Count(); index++) {
 		if (As_Reference(index).Get_Image_Data()) {
 			Map.Add_To_List(&As_Reference(index));
 		}

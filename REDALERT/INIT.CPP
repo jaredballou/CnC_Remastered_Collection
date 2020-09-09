@@ -252,6 +252,8 @@ bool Init_Game(int , char * [])
 	BuildingTypes.Set_Heap(STRUCT_COUNT);
 	AircraftTypes.Set_Heap(AIRCRAFT_COUNT);
 	InfantryTypes.Set_Heap(INFANTRY_COUNT);
+	WarheadTypes.Set_Heap(WARHEAD_COUNT);
+	WeaponTypes.Set_Heap(WEAPON_COUNT);
 	BulletTypes.Set_Heap(BULLET_COUNT);
 	AnimTypes.Set_Heap(ANIM_COUNT);
 	UnitTypes.Set_Heap(UNIT_COUNT);
@@ -266,6 +268,8 @@ bool Init_Game(int , char * [])
 	AircraftTypeClass::Init_Heap();
 	InfantryTypeClass::Init_Heap();
 	BulletTypeClass::Init_Heap();
+	WarheadTypeClass::Init_Heap();
+	WeaponTypeClass::Init_Heap();
 	AnimTypeClass::Init_Heap();
 	UnitTypeClass::Init_Heap();
 	VesselTypeClass::Init_Heap();
@@ -282,6 +286,8 @@ bool Init_Game(int , char * [])
 	CCPtr<FactoryClass>::Set_Heap(&Factories);
 	CCPtr<HouseClass>::Set_Heap(&Houses);
 	CCPtr<InfantryClass>::Set_Heap(&Infantry);
+	//CCPtr<WeaponClass>::Set_Heap(&Weapons);
+	//CCPtr<WarheadClass>::Set_Heap(&Warheads);
 	CCPtr<OverlayClass>::Set_Heap(&Overlays);
 	CCPtr<SmudgeClass>::Set_Heap(&Smudges);
 	CCPtr<TeamClass>::Set_Heap(&Teams);
@@ -296,6 +302,8 @@ bool Init_Game(int , char * [])
 	CCPtr<AircraftTypeClass>::Set_Heap(&AircraftTypes);
 	CCPtr<InfantryTypeClass>::Set_Heap(&InfantryTypes);
 	CCPtr<BulletTypeClass>::Set_Heap(&BulletTypes);
+	CCPtr<WeaponTypeClass>::Set_Heap(&WeaponTypes);
+	CCPtr<WarheadTypeClass>::Set_Heap(&WarheadTypes);
 	CCPtr<AnimTypeClass>::Set_Heap(&AnimTypes);
 	CCPtr<UnitTypeClass>::Set_Heap(&UnitTypes);
 	CCPtr<VesselTypeClass>::Set_Heap(&VesselTypes);
@@ -2774,7 +2782,8 @@ static void Init_Heaps(void)
 	Teams.Set_Heap(Rule.TeamMax);
 	Houses.Set_Heap(HOUSE_MAX);
 	TriggerTypes.Set_Heap(Rule.TrigTypeMax);
-//	Weapons.Set_Heap(Rule.WeaponMax);
+	Weapons.Set_Heap(Rule.WeaponMax);
+	Warheads.Set_Heap(Rule.WarheadMax);
 
 	/*
 	**	Speech holding tank buffer. Since speech does not mix, it can be placed
@@ -3788,6 +3797,8 @@ void Free_Heaps(void)
 	TerrainTypes.Clear();
 	OverlayTypes.Clear();
 	SmudgeTypes.Clear();
+	WeaponTypes.Clear();
+	WarheadTypes.Clear();
 #if (0)
 	HouseTypeClass::Init_Heap();
 	BuildingTypeClass::Init_Heap();

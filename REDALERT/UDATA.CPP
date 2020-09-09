@@ -48,6 +48,8 @@
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include	"function.h"
+//#include <bits/stdc++.h> 
+
 
 /*
 **	This is the list of animation stages to use when the harvester
@@ -980,7 +982,7 @@ void UnitTypeClass::Init_Heap(void)
 UnitType UnitTypeClass::From_Name(char const * name)
 {
 	if (name != NULL) {
-		for (UnitType classid = UNIT_FIRST; classid < UNIT_COUNT; classid++) {
+		for (UnitType classid = UNIT_FIRST; classid < UnitTypes.Count(); classid++) {
 			if (stricmp(As_Reference(classid).IniName, name) == 0) {
 				return(classid);
 			}
@@ -1041,7 +1043,7 @@ void UnitTypeClass::Display(int x, int y, WindowNumberType window, HousesType ) 
  *=============================================================================================*/
 void UnitTypeClass::Prep_For_Add(void)
 {
-	for (UnitType index = UNIT_FIRST; index < UNIT_COUNT; index++) {
+	for (UnitType index = UNIT_FIRST; index < UnitTypes.Count(); index++) {
 		if (As_Reference(index).Get_Image_Data() != NULL) {
 			Map.Add_To_List(&As_Reference(index));
 		}
@@ -1067,7 +1069,7 @@ void UnitTypeClass::Prep_For_Add(void)
  *=============================================================================================*/
 void UnitTypeClass::One_Time(void)
 {
-	for (UnitType index = UNIT_FIRST; index < UNIT_COUNT; index++) {
+	for (UnitType index = UNIT_FIRST; index < UnitTypes.Count(); index++) {
 		char	fullname[_MAX_FNAME+_MAX_EXT];
 		char	buffer[_MAX_FNAME];
 		UnitTypeClass const & uclass = As_Reference(index);

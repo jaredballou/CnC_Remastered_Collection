@@ -1344,7 +1344,7 @@ void InfantryTypeClass::Display(int x, int y, WindowNumberType window, HousesTyp
  *=============================================================================================*/
 void InfantryTypeClass::Prep_For_Add(void)
 {
-	for (InfantryType index = INFANTRY_FIRST; index < INFANTRY_COUNT; index++) {
+	for (InfantryType index = INFANTRY_FIRST; index < InfantryTypes.Count(); index++) {
 		Map.Add_To_List(&As_Reference(index));
 	}
 }
@@ -1371,7 +1371,7 @@ void InfantryTypeClass::Prep_For_Add(void)
 InfantryType InfantryTypeClass::From_Name(char const * name)
 {
 	if (name != NULL) {
-		for (InfantryType classid = INFANTRY_FIRST; classid < INFANTRY_COUNT; classid++) {
+		for (InfantryType classid = INFANTRY_FIRST; classid < InfantryTypes.Count(); classid++) {
 			if (stricmp(As_Reference(classid).IniName, name) == 0) {
 				return(classid);
 			}
@@ -1398,7 +1398,7 @@ InfantryType InfantryTypeClass::From_Name(char const * name)
  *=============================================================================================*/
 void InfantryTypeClass::One_Time(void)
 {
-	for (InfantryType index = INFANTRY_FIRST; index < INFANTRY_COUNT; index++) {
+	for (InfantryType index = INFANTRY_FIRST; index < InfantryTypes.Count(); index++) {
 		char fullname[_MAX_FNAME+_MAX_EXT];
 		InfantryTypeClass	const * uclass;
 		CCFileClass	file;

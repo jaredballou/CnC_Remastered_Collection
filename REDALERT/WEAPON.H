@@ -54,6 +54,7 @@ class WeaponTypeClass
 		void operator delete(void * pointer);
 
 		char const * Name(void) const {return(IniName);}
+		static void Init_Heap(void);
 		bool Read_INI(CCINIClass & ini);
 		static WeaponTypeClass * As_Pointer(WeaponType weapon);
 		void Code_Pointers(void) {}

@@ -53,6 +53,7 @@ class WarheadTypeClass
 		void Code_Pointers(void) {}
 		void Decode_Pointers(void) {}
 		char const * Name(void) const {return(IniName);}
+		static void Init_Heap(void);
 		bool Read_INI(CCINIClass & ini);
 		static WarheadTypeClass * As_Pointer(WarheadType weapon);
 

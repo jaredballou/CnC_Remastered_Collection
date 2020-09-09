@@ -225,6 +225,8 @@ extern TFixedIHeapClass<HouseTypeClass>					HouseTypes;
 extern TFixedIHeapClass<BuildingTypeClass>				BuildingTypes;
 extern TFixedIHeapClass<AircraftTypeClass>				AircraftTypes;
 extern TFixedIHeapClass<InfantryTypeClass>				InfantryTypes;
+extern TFixedIHeapClass<WeaponTypeClass>				WeaponTypes;
+extern TFixedIHeapClass<WarheadTypeClass>				WarheadTypes;
 extern TFixedIHeapClass<BulletTypeClass>					BulletTypes;
 extern TFixedIHeapClass<AnimTypeClass>						AnimTypes;
 extern TFixedIHeapClass<UnitTypeClass>						UnitTypes;

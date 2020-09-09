@@ -453,7 +453,7 @@ void VesselTypeClass::Display(int x, int y, WindowNumberType window, HousesType 
  *=============================================================================================*/
 void VesselTypeClass::Prep_For_Add(void)
 {
-	for (VesselType index = VESSEL_FIRST; index < VESSEL_COUNT; index++) {
+	for (VesselType index = VESSEL_FIRST; index < VesselTypes.Count(); index++) {
 		if (As_Reference(index).Get_Image_Data() != NULL) {
 			Map.Add_To_List(&As_Reference(index));
 		}
@@ -554,7 +554,7 @@ void VesselTypeClass::Dimensions(int & width, int & height) const
  *=============================================================================================*/
 void VesselTypeClass::One_Time(void)
 {
-	for (VesselType index = VESSEL_FIRST; index < VESSEL_COUNT; index++) {
+	for (VesselType index = VESSEL_FIRST; index < VesselTypes.Count(); index++) {
 		char	fullname[_MAX_FNAME+_MAX_EXT];
 		char	buffer[_MAX_FNAME];
 		VesselTypeClass const & uclass = As_Reference(index);
@@ -678,7 +678,7 @@ short const * VesselTypeClass::Overlap_List(void) const
 VesselType VesselTypeClass::From_Name(char const * name)
 {
 	if (name != NULL) {
-		for (VesselType classid = VESSEL_FIRST; classid < VESSEL_COUNT; classid++) {
+		for (VesselType classid = VESSEL_FIRST; classid < VesselTypes.Count(); classid++) {
 			if (stricmp(As_Reference(classid).IniName, name) == 0) {
 				return(classid);
 			}

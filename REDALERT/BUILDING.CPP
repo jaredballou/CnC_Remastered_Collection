@@ -2209,7 +2209,7 @@ void BuildingClass::Update_Buildables(void)
 			int v;
 
 			case RTTI_VESSELTYPE:
-				for (v = VESSEL_FIRST; v < VESSEL_COUNT; v++) {
+				for (v = VESSEL_FIRST; v < VesselTypes.Count(); v++) {
 					if (PlayerPtr->Can_Build(&VesselTypeClass::As_Reference((VesselType)v), ActLike)) {
 						if (Session.Type == GAME_GLYPHX_MULTIPLAYER) {
 							Sidebar_Glyphx_Add(RTTI_VESSELTYPE, v, House, buildable_via_capture);
@@ -2221,7 +2221,7 @@ void BuildingClass::Update_Buildables(void)
 				break;
 
 			case RTTI_BUILDINGTYPE:
-				for (i = STRUCT_FIRST; i < STRUCT_COUNT; i++) {
+				for (i = STRUCT_FIRST; i < BuildingTypes.Count(); i++) {
 					if (PlayerPtr->Can_Build(&BuildingTypeClass::As_Reference((StructType)i), ActLike)) {
 						if (Session.Type == GAME_GLYPHX_MULTIPLAYER) {
 							Sidebar_Glyphx_Add(RTTI_BUILDINGTYPE, i, House, buildable_via_capture);
@@ -2233,7 +2233,7 @@ void BuildingClass::Update_Buildables(void)
 				break;
 
 			case RTTI_UNITTYPE:
-				for (u = UNIT_FIRST; u < UNIT_COUNT; u++) {
+				for (u = UNIT_FIRST; u < UnitTypes.Count(); u++) {
 					if (PlayerPtr->Can_Build(&UnitTypeClass::As_Reference((UnitType)u), ActLike)) {
 						if (Session.Type == GAME_GLYPHX_MULTIPLAYER) {
 							Sidebar_Glyphx_Add(RTTI_UNITTYPE, u, House, buildable_via_capture);
@@ -2245,7 +2245,7 @@ void BuildingClass::Update_Buildables(void)
 				break;
 
 			case RTTI_INFANTRYTYPE:
-				for (f = INFANTRY_FIRST; f < INFANTRY_COUNT; f++) {
+				for (f = INFANTRY_FIRST; f < InfantryTypes.Count(); f++) {
 					if (PlayerPtr->Can_Build(&InfantryTypeClass::As_Reference((InfantryType)f), ActLike)) {
 						if (InfantryTypeClass::As_Reference((InfantryType)f).IsDog) {
 							if (*this == STRUCT_KENNEL) {
@@ -2269,7 +2269,7 @@ void BuildingClass::Update_Buildables(void)
 				break;
 
 			case RTTI_AIRCRAFTTYPE:
-				for (a = AIRCRAFT_FIRST; a < AIRCRAFT_COUNT; a++) {
+				for (a = AIRCRAFT_FIRST; a < AircraftTypes.Count(); a++) {
 					if (PlayerPtr->Can_Build(&AircraftTypeClass::As_Reference((AircraftType)a), ActLike)) {
 						if (Session.Type == GAME_GLYPHX_MULTIPLAYER) {
 							Sidebar_Glyphx_Add(RTTI_AIRCRAFTTYPE, a, House, buildable_via_capture);
@@ -2319,7 +2319,7 @@ void BuildingClass::Update_Buildables(void)
 			int v;
 
 			case RTTI_VESSELTYPE:
-				for (v = VESSEL_FIRST; v < VESSEL_COUNT; v++) {
+				for (v = VESSEL_FIRST; v < VesselTypes.Count(); v++) {
 					if (PlayerPtr->Can_Build(&VesselTypeClass::As_Reference((VesselType)v), ActLike)) {
 						Map.Add(RTTI_VESSELTYPE, v);
 					}
@@ -2327,7 +2327,7 @@ void BuildingClass::Update_Buildables(void)
 				break;
 
 			case RTTI_BUILDINGTYPE:
-				for (i = STRUCT_FIRST; i < STRUCT_COUNT; i++) {
+				for (i = STRUCT_FIRST; i < BuildingTypes.Count(); i++) {
 					if (PlayerPtr->Can_Build(&BuildingTypeClass::As_Reference((StructType)i), ActLike)) {
 						Map.Add(RTTI_BUILDINGTYPE, i);
 					}
@@ -2335,7 +2335,7 @@ void BuildingClass::Update_Buildables(void)
 				break;
 
 			case RTTI_UNITTYPE:
-				for (u = UNIT_FIRST; u < UNIT_COUNT; u++) {
+				for (u = UNIT_FIRST; u < UnitTypes.Count(); u++) {
 					if (PlayerPtr->Can_Build(&UnitTypeClass::As_Reference((UnitType)u), ActLike)) {
 						Map.Add(RTTI_UNITTYPE, u);
 					}
@@ -2343,7 +2343,7 @@ void BuildingClass::Update_Buildables(void)
 				break;
 
 			case RTTI_INFANTRYTYPE:
-				for (f = INFANTRY_FIRST; f < INFANTRY_COUNT; f++) {
+				for (f = INFANTRY_FIRST; f < InfantryTypes.Count(); f++) {
 					if (PlayerPtr->Can_Build(&InfantryTypeClass::As_Reference((InfantryType)f), ActLike)) {
 						if (InfantryTypeClass::As_Reference((InfantryType)f).IsDog) {
 							if (*this == STRUCT_KENNEL) {
@@ -2359,7 +2359,7 @@ void BuildingClass::Update_Buildables(void)
 				break;
 
 			case RTTI_AIRCRAFTTYPE:
-				for (a = AIRCRAFT_FIRST; a < AIRCRAFT_COUNT; a++) {
+				for (a = AIRCRAFT_FIRST; a < AircraftTypes.Count(); a++) {
 					if (PlayerPtr->Can_Build(&AircraftTypeClass::As_Reference((AircraftType)a), ActLike)) {
 						Map.Add(RTTI_AIRCRAFTTYPE, a);
 					}

@@ -387,7 +387,7 @@ bool RulesClass::General(CCINIClass & ini)
 
 	if(ini.Is_Present(AFTERMATH)) {
 //debugprint( "NewUnitsEnabled previously %i\n", NewUnitsEnabled );
-		NewUnitsEnabled = ini.Get_Int(AFTERMATH, "NewUnitsEnabled", 0);
+		NewUnitsEnabled = ini.Get_Int(AFTERMATH, "NewUnitsEnabled", 1);
 //debugprint( "NewUnitsEnabled set to %i by Rules\n", NewUnitsEnabled );
 		MTankDistance = ini.Get_Int(AFTERMATH,"MTankDistance",MTankDistance);
 		QuakeUnitDamage = ini.Get_Fixed(AFTERMATH, "QuakeUnitDamage", QuakeUnitDamage);
@@ -638,71 +638,7 @@ bool RulesClass::Heap_Maximums(CCINIClass & ini)
 	**	be initialized as necessary.
 	*/
 	Warheads.Set_Heap(WarheadMax);
-	new WarheadTypeClass("SA");
-	new WarheadTypeClass("HE");
-	new WarheadTypeClass("AP");
-	new WarheadTypeClass("Fire");
-	new WarheadTypeClass("HollowPoint");
-	new WarheadTypeClass("Super");
-	new WarheadTypeClass("Organic");
-	new WarheadTypeClass("Nuke");
-#ifdef FIXIT_CSII	//	checked - ajw 9/28/98
-	new WarheadTypeClass("Mechanical");
-#endif
-
 	Weapons.Set_Heap(WeaponMax);
-	new WeaponTypeClass("Colt45");
-	new WeaponTypeClass("ZSU-23");
-	new WeaponTypeClass("Vulcan");
-	new WeaponTypeClass("Maverick");
-	new WeaponTypeClass("Camera");
-	new WeaponTypeClass("FireballLauncher");
-	new WeaponTypeClass("Sniper");
-	new WeaponTypeClass("ChainGun");
-	new WeaponTypeClass("Pistol");
-	new WeaponTypeClass("M1Carbine");
-	new WeaponTypeClass("Dragon");
-	new WeaponTypeClass("Hellfire");
-	new WeaponTypeClass("Grenade");
-	new WeaponTypeClass("75mm");
-	new WeaponTypeClass("90mm");
-	new WeaponTypeClass("105mm");
-	new WeaponTypeClass("120mm");
-	new WeaponTypeClass("TurretGun");
-	new WeaponTypeClass("MammothTusk");
-	new WeaponTypeClass("155mm");
-	new WeaponTypeClass("M60mg");
-	new WeaponTypeClass("Napalm");
-	new WeaponTypeClass("TeslaZap");
-	new WeaponTypeClass("Nike");
-	new WeaponTypeClass("8Inch");
-	new WeaponTypeClass("Stinger");
-	new WeaponTypeClass("TorpTube");
-	new WeaponTypeClass("2Inch");
-	new WeaponTypeClass("DepthCharge");
-	new WeaponTypeClass("ParaBomb");
-	new WeaponTypeClass("DogJaw");
-	new WeaponTypeClass("Heal");
-	new WeaponTypeClass("SCUD");
-	new WeaponTypeClass("Flamer");
-	new WeaponTypeClass("RedEye");
-
-#ifdef FIXIT_ANTS
-	new WeaponTypeClass("Mandible");
-#endif
-
-#ifdef FIXIT_CSII	//	checked - ajw 9/28/98
-	new WeaponTypeClass("PortaTesla");
-	new WeaponTypeClass("GoodWrench");
-	new WeaponTypeClass("SubSCUD");
-	new WeaponTypeClass("TTankZap");
-	new WeaponTypeClass("APTusk");
-	new WeaponTypeClass("Democharge");
-#endif
-#ifdef FIXIT_CARRIER	//	checked - ajw 9/28/98
-	new WeaponTypeClass("AirAssault");
-#endif
-
 	return(true);
 }
 

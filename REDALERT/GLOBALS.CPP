@@ -81,6 +81,8 @@ TFixedIHeapClass<HouseTypeClass>		HouseTypes;
 TFixedIHeapClass<BuildingTypeClass>	BuildingTypes;
 TFixedIHeapClass<AircraftTypeClass>	AircraftTypes;
 TFixedIHeapClass<InfantryTypeClass>	InfantryTypes;
+TFixedIHeapClass<WeaponTypeClass>	WeaponTypes;
+TFixedIHeapClass<WarheadTypeClass>	WarheadTypes;
 TFixedIHeapClass<BulletTypeClass>	BulletTypes;
 TFixedIHeapClass<AnimTypeClass>		AnimTypes;
 TFixedIHeapClass<UnitTypeClass>		UnitTypes;

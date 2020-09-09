@@ -206,7 +206,7 @@ void BulletTypeClass::One_Time(void)
 	/*
 	**	Load the bullet shapes.
 	*/
-	for (int index = BULLET_FIRST; index < BULLET_COUNT; index++) {
+	for (int index = BULLET_FIRST; index < BulletTypes.Count(); index++) {
 		BulletTypeClass const & bullet = As_Reference((BulletType)index);
 		char	fullname[_MAX_FNAME+_MAX_EXT];
 
